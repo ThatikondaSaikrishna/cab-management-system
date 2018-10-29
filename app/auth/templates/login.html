@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div style="display: flex; justify-content: center;">
+        <img src="static/img/moving-car.gif" alt="Moving car" height="155px" width="334px" align="center">
+    </div>
+    <img src="static/img/images.png" style="width: 100px; height: 100px; border-radius: 50%; display: block; margin-left: auto; margin-right: auto;">
+    <div class="container">
+
+      <form class="form-signin" method="POST">
+          <h2 class="form-signin-heading">Please Login</h2>
+          {{ form.hidden_tag() }}
+          {{ wtf.form_field(form.empid) }}
+          {{ wtf.form_field(form.password, style="background-color:white; color:black") }}
+          {{ wtf.form_field(form.stay_loggedin) }}
+          <button class="btn btn-lg btn-primary btn-block" style="background-color:black;" type="submit">Sign in</button>
+      </form>
+
+    </div> <!-- /container -->
+{% endblock %}
+

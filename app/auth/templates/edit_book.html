@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div style="display: flex; justify-content: center;">
+        <img src="static/img/moving-car.gif" alt="Moving car" height="155px" width="334px" align="center">
+    </div>
+     <div class="container">
+         <form class="form-signin" method="POST">
+             <h2 class="form-signin-heading"><b>Update Profile</b></h2>
+             {{ form.hidden_tag() }}
+             {{ wtf.form_field(form.name) }}
+             {{ wtf.form_field(form.login) }}
+             {{ wtf.form_field(form.logout) }}
+             <button class="btn btn-lg btn-primary btn-block" type="submit" style="background-color:black;">Update</button>
+         </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,147 @@
+body{
+  line-height:1;
+  margin:0;
+  font-family:sans-serif;
+}
+
+nav{
+  width:100%;
+  margin:0;
+  background-color:black;
+}
+
+nav ul{
+  overflow:hidden;
+  margin:0 auto;
+  padding:0;
+  width:80%;
+}
+
+ul.tonal li{
+  list-style:none;
+  float:left;
+  display:inline-block;
+}
+
+ul.tonal li.tonal-right{
+  float:right;
+}
+
+ul.tonal li a{
+  display:block;
+  text-decoration:none;
+  font-size:20px;
+  text-align:center;
+  padding:16px;
+  color:white;
+}
+
+ul.tonal li a:hover{
+  background-color:white;
+  color:black;
+}
+
+ul.tonal li.dropdownIcon{
+  display:none;
+}
+
+@media screen and (max-width:600px){
+  ul.tonal li:not(:nth-child(1)){
+    display:none;
+  }
+  ul.tonal li.dropdownIcon{
+    display:block;
+    float:right;
+  }
+
+  ul.tonal.responsive li.dropdownIcon{
+    position:absolute;
+    top:0;
+    right:0;
+  }
+  ul.tonal.responsive{
+    position:relative;
+  }
+
+  ul.tonal.responsive li{
+    display:inline;
+    float:none;
+  }
+  ul.tonal.responsive li a{
+    display:block;
+    text-align:left;
+  }
+}
+
+####  Login.html (css styles)  #####
+
+.box{
+    width: 320px;
+    height: 420px;
+    background: #000;
+    color: white;
+    top: 60%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+.avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+
+.box p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.box input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.box input[type="text"], input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.box input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: white;
+    color: #000;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.box input[type="submit"]:hover
+{
+    cursor: pointer;
+    background: black;
+    color: #fff;
+}
+.box a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+}
+
+.box a:hover
+{
+    color: white;
+}

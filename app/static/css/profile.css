@@ -1,0 +1,37 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9);
+  max-width:400px;
+  min-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  background-color:white;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+.btn-profile {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.prof-style a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+.btn-profile:hover, a:hover {
+  opacity: 0.7;
+}

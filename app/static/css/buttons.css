@@ -1,0 +1,37 @@
+.button {
+         background-color: black;
+    border-left: 20%;
+    color: white;
+    padding: 15px 34px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid black;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size:0.875em;
+    display: inline-block;}
+.button2 {
+ background-color: black;
+    border-left: 20%;
+    color: white;
+    padding: 15px 34px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid black;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size:0.875em;
+    display: inline-block;}
+    .button1 {left:35%;}
+    .button2 {left:50%;}
+    .button3 {left:65%}

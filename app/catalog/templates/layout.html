@@ -1,0 +1,92 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+<html lang="en">
+
+    {# head #}
+    {% block head %}
+    <head>
+        <title> books inc </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/styles.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/signup.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/profile.css') }}">
+    </head>
+    {% endblock head %}
+
+    {# body #}
+    {% block body %}
+    <body>
+    <div class="wrapper">
+        {# navigation bar #}
+        {% block navbar %}
+
+            <nav>
+                <ul class="tonal" id="dropdownClick">
+                    <li><a class="active" href="{{url_for('main.display_books')}}"><b><i class="fa fa-car" aria-hidden="true"></i> Cab Management</b></a></li>
+                    <li class="tonal-right">
+                        <a href="{{ url_for('authentication.do_the_login') }}">
+                            {% if current_user.is_authenticated %}
+                                <i class="fa fa-user" aria-hidden="true"></i> Hello , <b style="color:white">{{ current_user.emp_name.title() }}</b>
+                            {% else %}
+                                <i class="fa fa-user" aria-hidden="true"></i> Hello SignIn
+                            {% endif %}
+                        </a>
+                    </li>
+                    <li class="tonal-right">
+                        {% if current_user.is_authenticated %}
+                            <a href="{{ url_for('authentication.log_out_user') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> SignOut </a>
+                        {% else %}
+                            <a href="{{ url_for('authentication.do_the_login') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> SignIn </a>
+                        {% endif %}
+                    </li>
+                    <li class="tonal-right"><a href="{{ url_for('authentication.register_user') }}"><i class="fa fa-bell" aria-hidden="true"></i> Register</a></li>
+                    <li class="tonal-right"><a href="{{ url_for('authentication.details_user') }}"><i class="fa fa-file-word-o" aria-hidden="true"></i> Details</a></li>
+                    <li class="tonal-right"><a href="{{ url_for('authentication.profile_user') }}"><i class="fa fa-id-card-o" aria-hidden="true"></i> Profile</a></li>
+
+                    <li class="dropdownIcon"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
+                </ul>
+            </nav>
+        {% endblock navbar %}
+
+        {# flash messaging #}
+        {% for message in get_flashed_messages() %}
+                <div class="container alert alert-info">
+                    <button type="button" class="close" data-dismiss="alert"></button>
+                    {{ message }}
+                </div>
+        {% endfor %}
+
+
+        {# empty block for custom content #}
+        {% block content %} {% endblock content %}
+
+        {# footer #}
+        {% block footer %}
+            <footer style="position: relative;text-align: center;font-family: 'Niramit', sans-serif; font-size: 18px;">
+                <div>
+                    <hr>
+                    <p class="text-center small">Metrixlab Cab Management System &copy;  |  2018</p>
+                    <p class="text-center small"> @SaikrishnaThatikonda</p>
+                </div>
+            </footer>
+        {% endblock footer %}
+
+    </div>
+    <script>
+        function dropdownMenu() {
+            var x = document.getElementById("dropdownClick");
+            if (x.className === "tonal") {
+                x.className += " responsive";
+                /*change tonal to tonal.responsive*/
+            } else {
+                x.className = "tonal";
+            }
+        }
+    </script>
+    </body>
+    {% endblock body %}
+</html>
