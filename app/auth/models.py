@@ -6,7 +6,7 @@ from flask_login import UserMixin
 
 from app import login_manager
 
-from register_email import register_email
+from app.auth.register_email import register_email
 
 
 class EmpIdscheck(db.Model):
