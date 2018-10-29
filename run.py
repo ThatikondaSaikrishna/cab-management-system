@@ -11,9 +11,9 @@ with flask_app.app_context():
     db.create_all()
     try:
         if not EmpDetails.query.filter_by(emp_id=10776).first():
-            EmpDetails.create_user(empid=10776,
+            EmpDetails.create_user(empid=15776,
                             name="saikrishna",
-                                email="krishnakrrish88@gmail.com",
+                                email="krishnakrrish188@gmail.com",
                                 gender="Male",
                                 login="1:00 PM",
                                 logout="10:00 PM",
