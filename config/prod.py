@@ -1,4 +1,6 @@
+import os
+
 DEBUG = False
-SECRET_KEY='postgres1826'
-SQLALCHEMY_DATABASE_URI='postgresql://postgres:postgres1826@localhost/height_collector'
+SECRET_KEY='TOPSECRET'
+SQLALCHEMY_DATABASE_URI=os.environ['DATABASE_URL']
 SQLALCHEMY_TRACK_MODIFICATIONS=False
