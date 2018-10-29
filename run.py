@@ -10,10 +10,10 @@ flask_app = create_app('prod')
 with flask_app.app_context():
     db.create_all()
     try:
-        if not EmpDetails.query.filter_by(emp_id=10786).first():
-            EmpDetails.create_user(empid=10786,
+        if not EmpDetails.query.filter_by(emp_id=10776).first():
+            EmpDetails.create_user(empid=10776,
                             name="saikrishna",
-                                email="krishnakrrish8@gmail.com",
+                                email="krishnakrrish88@gmail.com",
                                 gender="Male",
                                 login="1:00 PM",
                                 logout="10:00 PM",
