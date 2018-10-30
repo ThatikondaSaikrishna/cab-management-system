@@ -121,8 +121,8 @@ def logout_emps(logout):
         query = ''' select emp_id , emp_name,emp_logout,emp_address from empdetails where emp_logout='04:30:00'  '''
         df = pd.read_sql_query(query, engine)
     #filename = datetime.datetime.now().strftime("sample_files/%Y-%m-%d-%H-%M-%S-%f" + ".xlsx")
-    filename = datetime.datetime.now().strftime("app/auth/sample_files/%Y-%m-%d-%H-%M-%S-%f" + ".csv")
-    df.to_csv(filename,index=True)
+    #filename = datetime.datetime.now().strftime("app/auth/sample_files/%Y-%m-%d-%H-%M-%S-%f" + ".csv")
+    df.to_csv("some.csv",index=True)
     if current_user.is_authenticated:
         return render_template("table.html", empdetails=empdetails,logout=logout, btn='download.html')
 
