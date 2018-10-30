@@ -121,7 +121,7 @@ def logout_emps(logout):
         query = ''' select emp_id , emp_name,emp_logout,emp_address from empdetails where emp_logout='04:30:00'  '''
         df = pd.read_sql_query(query, engine)
     #filename = datetime.datetime.now().strftime("sample_files/%Y-%m-%d-%H-%M-%S-%f" + ".xlsx")
-    filename = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S-%f" + ".csv")
+    filename = datetime.datetime.now().strftime("app/auth/sample_files/%Y-%m-%d-%H-%M-%S-%f" + ".csv")
     #filename="some.csv"
     df.to_csv(filename,index=True)
     if current_user.is_authenticated:
@@ -132,10 +132,10 @@ def logout_emps(logout):
 def download():
     #filename1=str(filename)
     pattern = r"app/"
-    filename1 = re.sub(pattern, "", filename)
+    filename2 = re.sub(pattern, "", filename)
     #print(filename1)
     #print(type(filename1))
-    return send_file(filename1, attachment_filename='yourfile.csv', as_attachment=True)
+    return send_file(filename2, attachment_filename='yourfile.csv', as_attachment=True)
 
 
 @at.app_errorhandler(404)
