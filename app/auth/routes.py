@@ -130,11 +130,11 @@ def logout_emps(logout):
 @at.route("/download-file/")
 def download():
     #filename1=str(filename)
-    pattern = r"app/"
-    filename1 = re.sub(pattern, "", filename)
-    print(filename1)
-    print(type(filename1))
-    return send_file(filename1, attachment_filename='yourfile.csv', as_attachment=True)
+    #pattern = r"app/"
+    #filename1 = re.sub(pattern, "", filename)
+    #print(filename1)
+    #print(type(filename1))
+    return send_file("some.csv", attachment_filename='yourfile.csv', as_attachment=True)
 
 
 @at.app_errorhandler(404)
