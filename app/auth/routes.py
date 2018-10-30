@@ -22,6 +22,8 @@ import datetime
 
 import re
 
+import os
+
 @at.route('/register' , methods=['GET','POST'])
 def register_user():
     if current_user.is_authenticated:
@@ -93,7 +95,7 @@ def profile_user():
 def logout_emps(logout):
     global filename
     empdetails = EmpDetails.query.all()
-    engine = create_engine('postgresql://postgres:postgres1826@localhost/height_collector')
+    engine = create_engine(SQLALCHEMY_DATABASE_URI=os.environ['DATABASE_URL'])
     if logout == '22:00:00':
         query = ''' select emp_id , emp_name,emp_logout,emp_address from empdetails where emp_logout='22:00:00'  '''
         df = pd.read_sql_query(query, engine)
