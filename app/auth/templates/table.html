@@ -100,6 +100,7 @@
                             {% if empdet.emp_logout|string == logout %}
                                 <tr>
                                     <td>{{ count }}</td>
+                                    {% set count=count+1 %}
                                     <td>{{ empdet.emp_id }}</td>
                                     <td>{{ empdet.emp_name|title }}</td>
                                     <td>{{ empdet.emp_logout }}</td>
@@ -107,7 +108,6 @@
                                     <td>      </td>
                                 </tr>
                             {% endif %}
-                        {% set count=count+1 %}
                         {% endfor %}
                     </table>
                 </article>
