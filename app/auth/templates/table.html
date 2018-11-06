@@ -95,12 +95,12 @@
                             <th>Address</th>
                             <th>Signature</th>
                         </tr>
-                        {% set count = 1 %}
+                        {% set count1 = 1 %}
                         {% for empdet in empdetails %}
                             {% if empdet.emp_logout|string == logout %}
                                 <tr>
-                                    <td>{{ count }}</td>
-                                    {% set count=count+1 %}
+                                    <td>{{ count1 }}</td>
+                                    {% set count1=count1+1 %}
                                     <td>{{ empdet.emp_id }}</td>
                                     <td>{{ empdet.emp_name|title }}</td>
                                     <td>{{ empdet.emp_logout }}</td>
