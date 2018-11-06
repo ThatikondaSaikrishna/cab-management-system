@@ -7,7 +7,7 @@ import smtplib
 
 def register_email(emp_email, emp_name):
     from_email = "thatikondasaikrishna111@gmail.com"
-    from_password = "s@iKRISHNA123456"
+    from_password = "s@iKRISHN@12345"
     to_email = emp_email
 
     # msg=MIMEText(message,'html')
