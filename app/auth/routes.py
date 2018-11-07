@@ -100,25 +100,25 @@ def logout_emps(logout):
         query = ''' select emp_id , emp_name,emp_logout,emp_address from empdetails where emp_logout='22:00:00' order by emp_id asc'''
         df = pd.read_sql_query(query, engine)
     elif logout == '22:30:00':
-        query = ''' select emp_id , emp_name,emp_logout,emp_address from empdetails where emp_logout='22:30:00'  '''
+        query = ''' select emp_id , emp_name,emp_logout,emp_address from empdetails where emp_logout='22:30:00' order by emp_id asc'''
         df = pd.read_sql_query(query, engine)
     elif logout == '12:00:00':
-        query = ''' select emp_id , emp_name,emp_logout,emp_address from empdetails where emp_logout='12:00:00'  '''
+        query = ''' select emp_id , emp_name,emp_logout,emp_address from empdetails where emp_logout='12:00:00' order by emp_id asc '''
         df = pd.read_sql_query(query, engine)
     elif logout == '12:30:00':
-        query = ''' select emp_id , emp_name,emp_logout,emp_address from empdetails where emp_logout='12:30:00'  '''
+        query = ''' select emp_id , emp_name,emp_logout,emp_address from empdetails where emp_logout='12:30:00' order by emp_id asc '''
         df = pd.read_sql_query(query, engine)
     elif logout == '02:00:00':
-        query = ''' select emp_id , emp_name,emp_logout,emp_address from empdetails where emp_logout='02:00:00'  '''
+        query = ''' select emp_id , emp_name,emp_logout,emp_address from empdetails where emp_logout='02:00:00' order by emp_id asc '''
         df = pd.read_sql_query(query, engine)
     elif logout == '02:30:00':
-        query = ''' select emp_id , emp_name,emp_logout,emp_address from empdetails where emp_logout='02:30:00'  '''
+        query = ''' select emp_id , emp_name,emp_logout,emp_address from empdetails where emp_logout='02:30:00' order by emp_id asc '''
         df = pd.read_sql_query(query, engine)
     elif logout == '04:00:00':
-        query = ''' select emp_id , emp_name,emp_logout,emp_address from empdetails where emp_logout='04:00:00'  '''
+        query = ''' select emp_id , emp_name,emp_logout,emp_address from empdetails where emp_logout='04:00:00' order by emp_id asc  '''
         df = pd.read_sql_query(query, engine)
     else:
-        query = ''' select emp_id , emp_name,emp_logout,emp_address from empdetails where emp_logout='04:30:00'  '''
+        query = ''' select emp_id , emp_name,emp_logout,emp_address from empdetails where emp_logout='04:30:00' order by emp_id asc '''
         df = pd.read_sql_query(query, engine)
     #filename = datetime.datetime.now().strftime("sample_files/%Y-%m-%d-%H-%M-%S-%f" + ".xlsx")
     #filename = datetime.datetime.now().strftime("app/auth/sample_files/%Y-%m-%d-%H-%M-%S-%f" + ".csv")
