@@ -99,8 +99,8 @@
                         {% for empdet in empdetails %}
                             {% if empdet.emp_logout|string == logout %}
                                 <tr>
-                                    {% if count.append(count.pop() + 1) %}{% endif %}
                                     <td>{{ count }}</td>
+                                    {% if count.append(count.pop() + 1) %}{% endif %}
                                     {# increment count by 1 #}
                                     <td>{{ empdet.emp_id }}</td>
                                     <td>{{ empdet.emp_name|title }}</td>
