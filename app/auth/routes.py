@@ -97,7 +97,7 @@ def logout_emps(logout):
     empdetails = EmpDetails.query.all()
     engine = create_engine('postgres://pibvcrjendvofu:8f298c2e4d7186adde433264f0398a05b284e794ea5aaac82f317999aa3e622c@ec2-54-83-38-174.compute-1.amazonaws.com:5432/d7gdqq08e4hoog')
     if logout == '22:00:00':
-        query = ''' select emp_id , emp_name,emp_logout,emp_address from empdetails where emp_logout='22:00:00' '''
+        query = ''' select emp_id , emp_name,emp_logout,emp_address from empdetails where emp_logout='22:00:00' order by emp_id asc'''
         df = pd.read_sql_query(query, engine)
     elif logout == '22:30:00':
         query = ''' select emp_id , emp_name,emp_logout,emp_address from empdetails where emp_logout='22:30:00'  '''
