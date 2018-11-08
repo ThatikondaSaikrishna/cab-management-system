@@ -10,11 +10,11 @@
             <h2 class="form-signin-heading">Register Here</h2>
             {{ form.hidden_tag() }}
             <label for="hno">Employee ID</label>
-            <input type="number" name="empid" id="empid" placeholder="Ex: 20786" class="form-signin form-control"><br>
+            <input type="number" name="empid" id="empid" placeholder="Ex: 20786" class="form-signin form-control" min="20100" max="30100"><br>
             <label for="name">Name</label>
-            <input type="text" name="name" id="name" placeholder="Ex: SaikrishnaThatikonda" class="form-signin form-control"><br>
+            <input type="text" name="name" id="name" placeholder="Ex: Example" class="form-signin form-control"><br>
             <label for="hno">E-mail Address</label>
-            <input type="email" name="email" id="email" placeholder="Ex: SaiK.Thatikonda@us.metrixlab.com" class="form-signin form-control"><br>
+            <input type="email" name="email" id="email" placeholder="Ex: Example@us.metrixlab.com" class="form-signin form-control"><br>
             <h4>Gender</h4>
             <select name="gender" class="form-signin form-control">
                 <option value="male">Male</option>
@@ -26,11 +26,11 @@
             {{ wtf.form_field(form.password,style="background-color:white; border:0.5px solid #A4A5A7; color:black") }}
             {{ wtf.form_field(form.confirm,style="background-color:white; border:0.5px solid #A4A5A7; color:black") }}
             <label for="hno">H.No Street</label>
-            <input type="text" name="hno" id="hno" placeholder="Ex: 7-149,Road no 11" class="form-signin form-control"><br>
+            <input type="text" name="hno" id="hno" placeholder="Ex: 7-149,Road no 11" class="form-signin form-control" minlength="10" maxlength="100" ><br>
             <label for="address">H.No Street</label>
-            <input type="text" name="address" id="address" placeholder="Ex: Maruthi Nagar, Santosh nagar,Hyderabad" class="form-signin form-control"><br>
+            <input type="text" name="address" id="address" placeholder="Ex: Maruthi Nagar, Santosh nagar,Hyderabad" class="form-signin form-control" minlength="10" maxlength="100"><br>
             <label for="pincode">PinCode</label>
-            <input type="number" name="pincode" id="pincode" placeholder="Ex: 500060" class="form-signin form-control"><br>
+            <input type="number" name="pincode" id="pincode" placeholder="Ex: 500060" class="form-signin form-control" min="500000" max="600000"><br>
             <button class="btn btn-lg btn-primary btn-block" type="submit" style="background-color:black;">Register</button>
         </form>
 
@@ -41,8 +41,8 @@
             <footer style="position: relative;text-align: center;font-family: 'Niramit', sans-serif; font-size: 18px; ">
                 <div>
                     <hr>
-                    <p class="text-center small">Metrixlab Cab Management System &copy;  |  2018</p>
-                    <p class="text-center small"> @SaikrishnaThatikonda</p>
+                    <p class="text-center small">Cab Management System &copy;  |  2018</p>
+                    <p class="text-center small"> @Metrixlab Inc</p>
                 </div>
             </footer>
         {% endblock footer %}
