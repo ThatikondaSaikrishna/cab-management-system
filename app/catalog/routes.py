@@ -35,10 +35,10 @@ def edit_details(book_id):
         empdetails.emp_login = form.emp_login.data
         empdetails.emp_logout = form.emp_logout.data
 
-        send_email(empdetails.emp_email, empdetails.emp_name)
+        send_email(empdetails.emp_email, empdetails.emp_name , empdetails.emp_logout)
 
         send_manager_email(empdetails.emp_logout, empdetails.emp_name, manager_email="bharathrajklp007@gmail.com")
-        
+
         db.session.add(empdetails)
         db.session.commit()
         flash('Details Edited Successfully')
