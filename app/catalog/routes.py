@@ -16,6 +16,8 @@ from app.catalog.forms import EditDetailsForm , CreateBookForm
 
 from app.auth.send_email import send_email
 
+from app.auth.send_manager_email import send_manager_email
+
 
 @main.route('/')
 def display_books():
@@ -32,7 +34,11 @@ def edit_details(book_id):
         empdetails.emp_name = form.emp_name.data
         empdetails.emp_login = form.emp_login.data
         empdetails.emp_logout = form.emp_logout.data
+
         send_email(empdetails.emp_email, empdetails.emp_name)
+
+        send_manager_email(empdetails.emp_logout, empdetails.emp_name, manager_email="bharathrajklp007@gmail.com")
+        
         db.session.add(empdetails)
         db.session.commit()
         flash('Details Edited Successfully')

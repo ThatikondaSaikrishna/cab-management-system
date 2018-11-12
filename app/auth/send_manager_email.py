@@ -5,10 +5,10 @@ from email.mime.multipart import MIMEMultipart
 import smtplib
 
 
-def send_email(emp_email, emp_name, emp_logout):
+def send_manager_email(emp_logout,emp_name,manager_email,name="BharathRaj"):
     from_email = "thatikondasaikrishna111@gmail.com"
     from_password = "s@iKRISHN@12345"
-    to_email = emp_email
+    to_email = manager_email
 
     # msg=MIMEText(message,'html')
     # msg['Subject']=subject
@@ -16,13 +16,13 @@ def send_email(emp_email, emp_name, emp_logout):
     # msg['From']=from_email
 
     msg = MIMEMultipart()
-    msg['Subject'] = "Metrixlab, @ Details Updated Successfully"
+    msg['Subject'] = "Logout updated @ %s" % emp_name
     msg["From"] = from_email
     msg["To"] = to_email
 
     plain_text = " Testing the message "
-    html_text = "<h1>Hello, %s</h1><br> <h3>You have updated your logout time at <font size='10px'> %s </font>. <br> Please make sure to reset your details once you get into cab. Thanks. <br><img src='https://cdn.dribbble.com/users/35310/screenshots/2893503/london-black-cab-glyph.png'/> <br> <h2> Kind Regards, <br> Metrixlab Inc </h2>" % (
-    emp_name.title(), emp_logout)
+    html_text = "<h1>Hello, %s</h1><br> <h3>%s has updated his logout time to <font size='10px'> %s </font>. <br> Please check back whether everthing is fine. Thanks. <br><img src='https://cdn.dribbble.com/users/35310/screenshots/2893503/london-black-cab-glyph.png'/> <br> <h2> Kind Regards, <br> Metrixlab Inc </h2>" % (
+    name.title(), emp_name.title(),emp_logout)
 
     msg.attach(MIMEText(html_text, 'html'))
 
