@@ -21,7 +21,7 @@ def send_manager_email(emp_logout,emp_name,manager_email,name="BharathRaj"):
     msg["To"] = to_email
 
     plain_text = " Testing the message "
-    html_text = "<h1>Hello, %s</h1><br> <h3><font size='7px'> %s </font> has updated his logout time to <font size='10px'> %s </font>. <br> Please check back whether everthing is fine. Thanks. <br><img src='https://cdn.dribbble.com/users/35310/screenshots/2893503/london-black-cab-glyph.png'/> <br> <h2> Kind Regards, <br> Metrixlab Inc </h2>" % (
+    html_text = "<h1>Hello %s,</h1><br> <h3><font size='4px'> %s </font> has updated his logout time to <font size='6px'> %s </font>. where his login time is <font size='6px'>%s</font> <br> Please check back whether everthing is fine. Thanks. <br><img src='https://cdn.dribbble.com/users/35310/screenshots/2893503/london-black-cab-glyph.png'/> <br> <h2> Kind Regards, <br> Metrixlab Inc </h2>" % (
     name.title(), emp_name.title(),emp_logout)
 
     msg.attach(MIMEText(html_text, 'html'))

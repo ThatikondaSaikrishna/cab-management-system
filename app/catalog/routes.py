@@ -35,9 +35,13 @@ def edit_details(book_id):
         empdetails.emp_login = form.emp_login.data
         empdetails.emp_logout = form.emp_logout.data
 
-        send_email(empdetails.emp_email, empdetails.emp_name , empdetails.emp_logout)
+        # SP-PI Team
+        if empdetails.emp_id == 20786 | 20661 | 20813 | 20651 | 20853 | 20833 | 20631 | 20695 | 20661 | 20812 | 20761 | 20770 | 20783 | 20782:
+            send_manager_email(empdetails.emp_logout, empdetails.emp_name, empdetails.emp_login,manager_email="sreenath.velaga@us.metrixlab.com", name="sreenath Velaga")
+        else:
+            send_manager_email(empdetails.emp_logout, empdetails.emp_name, empdetails.emp_login,manager_email="sreenath.velaga@us.metrixlab.com", name="sreenath Velaga")
 
-        send_manager_email(empdetails.emp_logout, empdetails.emp_name, manager_email="bharathrajklp007@gmail.com")
+        send_email(empdetails.emp_email, empdetails.emp_name, empdetails.emp_logout)
 
         db.session.add(empdetails)
         db.session.commit()
